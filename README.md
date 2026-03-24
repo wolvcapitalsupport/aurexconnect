@@ -58,7 +58,7 @@ aurexconnect/
 └── tsconfig.json
 ```
 
----
+--
 
 ## ⚡ STEP-BY-STEP SETUP GUIDE
 
