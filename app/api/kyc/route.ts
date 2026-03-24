@@ -5,6 +5,9 @@ import { prisma } from '@/lib/prisma'
 import { createNotification, Notifs } from '@/lib/notifications'
 import { z } from 'zod'
 
+// This prevents the "Failed to collect page data" build error
+export const dynamic = 'force-dynamic';
+
 const kycSchema = z.object({
   documentType: z.enum(['passport', 'national_id', 'drivers_license']),
   documentNumber: z.string().min(3, 'Document number is required'),
@@ -15,26 +18,41 @@ const kycSchema = z.object({
 
 // GET — get user's current KYC submission
 export async function GET() {
-  const session = await getServerSession(authOptions)
-  if (!session) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  try {
+    const session = await getServerSession(authOptions)
+    if (!session || !session.user) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
 
-  const submission = await prisma.kycSubmission.findFirst({
-    where: { userId: session.user.id },
-    orderBy: { createdAt: 'desc' },
-  })
+    // Fetch submission and user status in parallel for better performance
+    const [submission, user] = await Promise.all([
+      prisma.kycSubmission.findFirst({
+        where: { userId: session.user.id },
+        orderBy: { createdAt: 'desc' },
+      }),
+      prisma.user.findUnique({
+        where: { id: session.user.id },
+        select: { kycStatus: true, kycRejectedNote: true },
+      })
+    ])
 
-  const user = await prisma.user.findUnique({
-    where: { id: session.user.id },
-    select: { kycStatus: true, kycRejectedNote: true },
-  })
-
-  return NextResponse.json({ submission, kycStatus: user?.kycStatus, kycRejectedNote: user?.kycRejectedNote })
+    return NextResponse.json({ 
+      submission, 
+      kycStatus: user?.kycStatus, 
+      kycRejectedNote: user?.kycRejectedNote 
+    })
+  } catch (error) {
+    console.error('KYC fetch error:', error)
+    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 })
+  }
 }
 
 // POST — submit KYC documents
 export async function POST(req: NextRequest) {
   const session = await getServerSession(authOptions)
-  if (!session) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  if (!session || !session.user) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  }
 
   try {
     const body = await req.json()
