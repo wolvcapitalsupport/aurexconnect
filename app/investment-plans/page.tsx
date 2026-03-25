@@ -6,25 +6,25 @@ import { CheckCircle, ArrowRight, Shield, Clock, Zap } from 'lucide-react'
 
 const PLANS = [
   {
-    name: 'Gold Plan', roi: '8%', min: 50, max: 999, duration: '24 Hours', durationDays: 1,
+    name: 'Basic Plan', roi: '8%', min: 200, max: 999, duration: '24 Hours', durationDays: 1,
     referral: '5%', color: '#c9a84c', glow: 'rgba(201,168,76,0.12)', popular: false,
     features: ['8% daily return on investment', 'Minimum $50 — Maximum $999', 'Profit returned in 24 hours', '5% referral bonus', 'Capital insured', '24/7 support access'],
     desc: 'Perfect for beginners. Get your feet wet with daily compounding returns on a low minimum.',
   },
   {
-    name: 'Platinum Plan', roi: '15%', min: 1000, max: 4999, duration: '3 Days', durationDays: 3,
+    name: 'Golden Plan', roi: '15%', min: 2000, max: 4999, duration: '3 Days', durationDays: 3,
     referral: '7%', color: '#e2e8f0', glow: 'rgba(226,232,240,0.08)', popular: true,
     features: ['15% ROI in 3 days', 'Minimum $1,000 — Maximum $4,999', 'Profit returned in 3 days', '7% referral bonus', 'Capital insured', 'Priority support'],
     desc: 'Our most popular plan. Higher returns over 3 days, ideal for committed investors seeking growth.',
   },
   {
-    name: 'Diamond Plan', roi: '25%', min: 5000, max: 19999, duration: '7 Days', durationDays: 7,
+    name: 'Mega Plan', roi: '25%', min: 100000, max: 19999, duration: '7 Days', durationDays: 7,
     referral: '10%', color: '#7dd3fc', glow: 'rgba(125,211,252,0.10)', popular: false,
     features: ['25% ROI in 7 days', 'Minimum $5,000 — Maximum $19,999', 'Profit returned in 7 days', '10% referral bonus', 'Capital insured', 'Dedicated account manager'],
     desc: 'For serious investors. Maximum weekly gains with a dedicated manager overseeing your portfolio.',
   },
   {
-    name: 'VIP Plan', roi: '50%', min: 20000, max: null, duration: '14 Days', durationDays: 14,
+    name: 'Premium Plan', roi: '50%', min: 100000, max: null, duration: '14 Days', durationDays: 14,
     referral: '15%', color: '#c084fc', glow: 'rgba(192,132,252,0.12)', popular: false,
     features: ['50% ROI in 14 days', 'Minimum $20,000 — No upper limit', 'Profit returned in 14 days', '15% referral bonus', 'Capital insured', 'VIP account manager + priority withdrawals'],
     desc: 'Exclusive VIP tier. Institutional-level returns for elite investors with high capital commitment.',
@@ -134,7 +134,7 @@ export default function InvestmentPlansPage() {
           <h2 className="text-3xl font-black mb-6">What Could You Earn?</h2>
           <div className="grid grid-cols-3 gap-4 mb-8">
             {[
-              { plan: 'Gold Plan', invest: '$500', profit: '+$40', total: '$540', period: '24h' },
+              { plan: 'Basic Plan', invest: '$500', profit: '+$40', total: '$540', period: '24h' },
               { plan: 'Platinum', invest: '$2,000', profit: '+$300', total: '$2,300', period: '3 days' },
               { plan: 'Diamond',  invest: '$10,000', profit: '+$2,500', total: '$12,500', period: '7 days' },
             ].map(e => (

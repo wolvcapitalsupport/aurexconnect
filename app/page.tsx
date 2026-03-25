@@ -81,10 +81,10 @@ const SERVICES = [
 ]
 
 const PLANS = [
-  { name: 'Gold',     roi: '8%',   min: '$50',     max: '$999',     duration: '24 Hours', referral: '5%',  color: '#c9a84c', popular: false },
-  { name: 'Platinum', roi: '15%',  min: '$1,000',  max: '$4,999',   duration: '3 Days',   referral: '7%',  color: '#e2e8f0', popular: true  },
-  { name: 'Diamond',  roi: '25%',  min: '$5,000',  max: '$19,999',  duration: '7 Days',   referral: '10%', color: '#7dd3fc', popular: false },
-  { name: 'VIP',      roi: '50%',  min: '$20,000', max: 'Unlimited',duration: '14 Days',  referral: '15%', color: '#c084fc', popular: false },
+  { name: 'Basic',     roi: '1%',   min: '$200',     max: '$1,999',     duration: '7 Days', referral: '5%',  color: '#c9a84c', popular: false },
+  { name: 'Golden', roi: '1.5%',  min: '$2,000',  max: '$29,0000',   duration: '14 Days',   referral: '7%',  color: '#e2e8f0', popular: true  },
+  { name: 'Mega',  roi: '2%',  min: '$30,000',  max: '$99,000',  duration: '30 Days',   referral: '10%', color: '#7dd3fc', popular: false },
+  { name: 'Premium',      roi: '2.5%',  min: '$100,000', max: '$500,000',duration: '30 Days',  referral: '15%', color: '#c084fc', popular: false },
 ]
 
 const TESTIMONIALS = [
@@ -95,7 +95,7 @@ const TESTIMONIALS = [
   },
   {
     name: 'Amira K.', country: 'UAE', rating: 5,
-    text: 'The VIP plan gave me returns I never thought possible. I have been with AurexConnect for 8 months and never had an issue.',
+    text: 'The Basic plan gave me returns I never thought possible. I have been with AurexConnect for 8 months and never had an issue.',
     avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80&auto=format&fit=crop&facepad=2',
   },
   {
@@ -110,7 +110,7 @@ const FAQS = [
   { q: 'How long does the withdrawal process take?', a: 'Withdrawals are processed within 1 hour. Occasionally delays occur due to network congestion, but we always prioritise fast disbursement.' },
   { q: 'Is my investment capital insured?', a: 'Yes. All invested funds are capital-insured. Should trading go against expectations, your principal is covered by our insurance policy up to $1,000,000.' },
   { q: 'Do you charge fees for your services?', a: 'No fees are charged to investors. We retain our operating profit before crediting your predetermined return rate.' },
-  { q: 'What is the minimum investment?', a: 'You can start with as little as $50 on our Gold Plan. There is no upper limit on the VIP Plan.' },
+  { q: 'What is the minimum investment?', a: 'You can start with as little as $200 on our Basic Plan. There is no upper limit on the VIP Plan.' },
   { q: 'Can I have multiple active investments?', a: 'Yes. You can run multiple plans simultaneously across different tiers.' },
 ]
 

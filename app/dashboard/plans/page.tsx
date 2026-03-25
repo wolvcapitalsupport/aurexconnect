@@ -33,14 +33,14 @@ interface Investment {
 }
 
 const PLAN_PALETTE: Record<string, { accent: string; glow: string; badge: string }> = {
-  'Gold Plan':     { accent: '#c9a84c', glow: 'rgba(201,168,76,0.12)',   badge: 'bg-[#c9a84c]/15 text-[#c9a84c] border-[#c9a84c]/30' },
-  'Platinum Plan': { accent: '#e2e8f0', glow: 'rgba(226,232,240,0.08)',  badge: 'bg-slate-400/15 text-slate-300 border-slate-400/30' },
-  'Diamond Plan':  { accent: '#7dd3fc', glow: 'rgba(125,211,252,0.10)',  badge: 'bg-sky-400/15 text-sky-300 border-sky-400/30' },
-  'VIP Plan':      { accent: '#c084fc', glow: 'rgba(192,132,252,0.12)',  badge: 'bg-purple-400/15 text-purple-300 border-purple-400/30' },
+  'Basic Plan':     { accent: '#c9a84c', glow: 'rgba(201,168,76,0.12)',   badge: 'bg-[#c9a84c]/15 text-[#c9a84c] border-[#c9a84c]/30' },
+  'Golden Plan': { accent: '#e2e8f0', glow: 'rgba(226,232,240,0.08)',  badge: 'bg-slate-400/15 text-slate-300 border-slate-400/30' },
+  'Mega Plan':  { accent: '#7dd3fc', glow: 'rgba(125,211,252,0.10)',  badge: 'bg-sky-400/15 text-sky-300 border-sky-400/30' },
+  'Premium Plan':      { accent: '#c084fc', glow: 'rgba(192,132,252,0.12)',  badge: 'bg-purple-400/15 text-purple-300 border-purple-400/30' },
 }
 
 function getPalette(name: string) {
-  return PLAN_PALETTE[name] ?? PLAN_PALETTE['Gold Plan']
+  return PLAN_PALETTE[name] ?? PLAN_PALETTE['Basic Plan']
 }
 
 // ── Purchase Confirmation Modal ──────────────────────────────────────

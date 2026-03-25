@@ -1,10 +1,13 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import localFont from 'next/font/local'
 import './globals.css'
 import { Providers } from './providers'
 import { Toaster } from 'react-hot-toast'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = localFont({
+  src: './fonts/Inter-Variable.ttf',
+  variable: '--font-inter',
+})
 
 export const metadata: Metadata = {
   title: 'AurexConnect — Premium Investment Platform',
