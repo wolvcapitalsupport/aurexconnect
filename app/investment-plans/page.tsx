@@ -6,7 +6,7 @@ import { CheckCircle, ArrowRight, Shield, Clock, Zap } from 'lucide-react'
 
 const PLANS = [
   {
-    name: 'Basic Plan', roi: '8%', min: 200, max: 999, duration: '24 Hours', durationDays: 1,
+    name: 'Basic Plan', roi: '8%', min: 200, max: 1999, duration: '24 Hours', durationDays: 1,
     referral: '5%', color: '#c9a84c', glow: 'rgba(201,168,76,0.12)', popular: false,
     features: ['8% daily return on investment', 'Minimum $50 — Maximum $999', 'Profit returned in 24 hours', '5% referral bonus', 'Capital insured', '24/7 support access'],
     desc: 'Perfect for beginners. Get your feet wet with daily compounding returns on a low minimum.',
@@ -24,7 +24,7 @@ const PLANS = [
     desc: 'For serious investors. Maximum weekly gains with a dedicated manager overseeing your portfolio.',
   },
   {
-    name: 'Premium Plan', roi: '50%', min: 100000, max: null, duration: '14 Days', durationDays: 14,
+    name: 'Premium Plan', roi: '50%', min: 100000, max: 500000, duration: '14 Days', durationDays: 14,
     referral: '15%', color: '#c084fc', glow: 'rgba(192,132,252,0.12)', popular: false,
     features: ['50% ROI in 14 days', 'Minimum $20,000 — No upper limit', 'Profit returned in 14 days', '15% referral bonus', 'Capital insured', 'VIP account manager + priority withdrawals'],
     desc: 'Exclusive VIP tier. Institutional-level returns for elite investors with high capital commitment.',
