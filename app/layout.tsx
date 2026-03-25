@@ -3,7 +3,7 @@ import localFont from 'next/font/local'
 import './globals.css'
 import { Providers } from './providers'
 import { Toaster } from 'react-hot-toast'
-
+import CryptoTicker from '@/components/CryptoTicker' 
 const inter = localFont({
   src: './fonts/Inter-Variable.ttf',
   variable: '--font-inter',
@@ -20,6 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={inter.className}>
         <Providers>
+          <CryptoTicker />
           {children}
           <Toaster
             position="top-right"
