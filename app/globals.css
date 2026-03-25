@@ -3,11 +3,16 @@
 @tailwind utilities;
 
 :root {
+  /* Brand Gold remains the same */
   --gold: #c9a84c;
   --gold-light: #e8cc7a;
-  --dark: #0a0a14;
-  --dark-card: #12121f;
-  --dark-border: #1e1e35;
+  
+  /* Light Theme Palette */
+  --background: #ffffff;
+  --foreground: #111827; /* Deep charcoal for text readability */
+  --light-card: #f9fafb; /* Soft gray for sections like stats */
+  --light-border: #e5e7eb; /* Subtle borders for cards */
+  --muted-text: #6b7280;
 }
 
 * { box-sizing: border-box; padding: 0; margin: 0; }
@@ -19,8 +24,9 @@ html, body {
 }
 
 body {
-  background: var(--dark);
-  color: #fff;
+  /* Switched to light background and dark text */
+  background: var(--background);
+  color: var(--foreground);
 }
 
 .gold-gradient {
@@ -34,15 +40,17 @@ body {
   background-clip: text;
 }
 
-.card-dark {
-  background: var(--dark-card);
-  border: 1px solid var(--dark-border);
+/* Updated card for light mode */
+.card-light {
+  background: var(--light-card);
+  border: 1px solid var(--light-border);
   border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 .btn-gold {
   background: linear-gradient(135deg, #c9a84c, #e8cc7a);
-  color: #0a0a14;
+  color: #ffffff; /* White text looks cleaner on gold in light mode */
   font-weight: 700;
   padding: 12px 28px;
   border-radius: 8px;
@@ -52,11 +60,13 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 10px 15px -3px rgba(201, 168, 76, 0.3);
 }
 
 .btn-gold:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(201, 168, 76, 0.4);
+  box-shadow: 0 20px 25px -5px rgba(201, 168, 76, 0.4);
+  filter: brightness(1.05);
 }
 
 /* Crypto ticker marquee */
@@ -77,7 +87,12 @@ body {
 }
 .fade-up { animation: fadeUp 0.6s ease both; }
 
-/* Custom scrollbar */
+/* Custom scrollbar for light mode */
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--dark); }
+::-webkit-scrollbar-track { background: var(--background); }
 ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+/* Utility class for section backgrounds */
+.bg-alt {
+  background-color: var(--light-card);
+  }
