@@ -84,7 +84,7 @@ const SERVICES = [
 const PLANS = [
   { name: 'Basic',     roi: '8%',   min: '$200',     max: '$1,999',     duration: '7 Days', referral: '5%',  color: '#c9a84c', popular: false },
   { name: 'Golden', roi: '15%',  min: '$2,000',  max: '$29,0000',   duration: '14 Days',   referral: '7%',  color: '#e2e8f0', popular: true  },
-  { name: 'Mega',  roi: '2%',  min: '$30,000',  max: '$99,000',  duration: '30 Days',   referral: '10%', color: '#7dd3fc', popular: false },
+  { name: 'Mega',  roi: '25%',  min: '$30,000',  max: '$99,000',  duration: '30 Days',   referral: '10%', color: '#7dd3fc', popular: false },
   { name: 'Premium',      roi: '50%',  min: '$100,000', max: '$500,000',duration: '30 Days',  referral: '15%', color: '#c084fc', popular: false },
 ]
 
