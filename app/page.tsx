@@ -1,4 +1,5 @@
 'use client'
+import AnimatedHero from './components/AnimatedHero'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -138,56 +139,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-[#0a0a14] text-white">
       <PublicHeader />
 
-      {/* ── HERO ────────────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background photo */}
-        <div className="absolute inset-0">
-          <Image
-            src={slide.img}
-            alt="hero"
-            fill
-            className="object-cover transition-opacity duration-1000"
-            priority
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a14]/80 via-[#0a0a14]/70 to-[#0a0a14]" />
-          {/* Grid overlay */}
-          <div className="absolute inset-0 opacity-10"
-            style={{ backgroundImage: 'linear-gradient(#c9a84c 1px,transparent 1px),linear-gradient(90deg,#c9a84c 1px,transparent 1px)', backgroundSize: '60px 60px' }} />
-        </div>
-
-        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center py-32">
-          <div className="inline-flex items-center gap-2 bg-[#c9a84c]/10 border border-[#c9a84c]/30 text-[#c9a84c] text-xs font-semibold px-4 py-2 rounded-full mb-8 uppercase tracking-widest">
-            <span className="w-2 h-2 rounded-full bg-[#c9a84c] animate-ping" />
-            Trusted by 14,000+ investors worldwide
-          </div>
-
-          <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6">
-            {slide.title}{' '}
-            <span className="gold-text">{slide.accent}</span>
-          </h1>
-          <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-            {slide.sub}
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/auth/register" className="btn-gold text-base px-8 py-4 rounded-xl flex items-center gap-2 justify-center">
-              Start Investing <ChevronRight size={18} />
-            </Link>
-            <Link href="/investment-plans" className="px-8 py-4 rounded-xl border border-white/20 hover:border-[#c9a84c] text-gray-300 hover:text-white transition-all flex items-center gap-2 justify-center backdrop-blur-sm bg-white/5">
-              View Plans <ChevronRight size={18} />
-            </Link>
-          </div>
-
-          {/* Slide indicators */}
-          <div className="flex justify-center gap-2 mt-14">
-            {HERO_SLIDES.map((_, i) => (
-              <button key={i} onClick={() => setHeroIdx(i)}
-                className={`h-1.5 rounded-full transition-all duration-300 ${i === heroIdx ? 'bg-[#c9a84c] w-8' : 'bg-white/30 w-2'}`} />
-            ))}
-          </div>
-        </div>
-      </section>
+      <AnimatedHero />
 
       {/* ── STATS BAR ───────────────────────────────────────────── */}
       <section className="py-12 bg-[#12121f] border-y border-[#1e1e35]">
