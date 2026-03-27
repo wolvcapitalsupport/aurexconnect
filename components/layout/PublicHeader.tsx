@@ -1,4 +1,5 @@
 'use client'
+import Image from "next/image";
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -82,26 +83,21 @@ export default function PublicHeader() {
       }`}>
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
 
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 flex-shrink-0">
-            {/* SVG logo mark — works without an image file */}
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="36" height="36" rx="8" fill="url(#gold-grad)" />
-              <path d="M8 24 L14 14 L18 20 L22 12 L28 24" stroke="#0a0a14" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-              <circle cx="22" cy="12" r="2.5" fill="#0a0a14"/>
-              <defs>
-                <linearGradient id="gold-grad" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
-                  <stop stopColor="#c9a84c"/>
-                  <stop offset="1" stopColor="#e8cc7a"/>
-                </linearGradient>
-              </defs>
-            </svg>
-            <span className="text-xl font-black tracking-tight">
-              <span className="gold-text">Aurex</span>
-              <span className="text-white">Connect</span>
-            </span>
-          </Link>
+      
 
+<Link href="/" className="flex items-center gap-2.5 flex-shrink-0">
+  <Image
+    src="/logo.png"
+    alt="AurexConnect Logo"
+    width={36}
+    height={36}
+  />
+
+  <span className="text-xl font-black tracking-tight">
+    <span className="gold-text">Aurex</span>
+    <span className="text-white">Connect</span>
+  </span>
+</Link>
           {/* Desktop links */}
           <div className="hidden lg:flex items-center gap-1">
             {NAV_LINKS.map(({ label, href }) => (

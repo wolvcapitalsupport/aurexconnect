@@ -1,5 +1,5 @@
 import Link from 'next/link'
-
+import Image from "next/image";
 const QUICK_LINKS = [
   { label: 'Home',             href: '/' },
   { label: 'Investment Plans', href: '/investment-plans' },
@@ -128,16 +128,16 @@ export default function PublicFooter() {
         </div>
 
         {/* Certificate */}
-        <div className="md:col-span-2">
-          <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-5">Certified</h4>
-          <div className="bg-[#12121f] border border-[#1e1e35] rounded-xl p-4 text-center hover:border-[#c9a84c]/30 transition-all">
-            {/* Certificate placeholder — replace with actual cert image */}
-            <div className="w-16 h-20 mx-auto rounded-lg bg-gradient-to-br from-[#c9a84c]/20 to-[#c9a84c]/5 border border-[#c9a84c]/20 flex flex-col items-center justify-center mb-2">
-              <span className="text-2xl">🏛️</span>
-            </div>
-            <div className="text-xs text-gray-500">Company<br/>Certificate</div>
-          </div>
 
+<a href="/certificate.png" target="_blank" rel="noopener noreferrer">
+  <Image
+    src="/certificate.png"
+    alt="Company Certificate"
+    width={64}
+    height={80}
+    className="mx-auto rounded-lg mb-2 object-cover cursor-pointer"
+  />
+</a>
           {/* Live support badge */}
           <div className="mt-4 bg-green-400/10 border border-green-400/20 rounded-xl p-3 text-center">
             <div className="flex items-center justify-center gap-1.5 mb-1">
@@ -147,7 +147,6 @@ export default function PublicFooter() {
             <div className="text-gray-500 text-xs">24 / 7 Available</div>
           </div>
         </div>
-      </div>
 
       {/* Bottom bar */}
       <div className="border-t border-[#1e1e35] py-5">
