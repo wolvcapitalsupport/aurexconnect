@@ -4,16 +4,12 @@ import './globals.css'
 import { Providers } from './providers'
 import { Toaster } from 'react-hot-toast'
 import CryptoTicker from './components/CryptoTicker' 
+import Script from 'next/script';
+
 const inter = localFont({
   src: './fonts/Inter-Variable.ttf',
   variable: '--font-inter',
 })
-
-export const metadata: Metadata = {
-  title: 'AurexConnect — Premium Investment Platform',
-  description: 'Invest with confidence. AurexConnect delivers high-yield returns on crypto, forex, and hedge funds.',
-  keywords: 'investment, crypto, forex, hedge funds, ROI, AurexConnect',
-}
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -22,6 +18,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Providers>
           <CryptoTicker />
           {children}
+
+          {/* Smartsupp Live Chat - Correct Next.js Implementation */}
+          <Script id="smartsupp-chat" strategy="afterInteractive">
+            {`
+              var _smartsupp = _smartsupp || {};
+              _smartsupp.key = '441af05abe42eccdc13231764d0ea2936ed074c3';
+              window.smartsupp||(function(d) {
+                var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+                s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+                c.type='text/javascript';c.charset='utf-8';c.async=true;
+                c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+              })(document);
+            `}
+          </Script>
+
           <Toaster
             position="top-right"
             toastOptions={{

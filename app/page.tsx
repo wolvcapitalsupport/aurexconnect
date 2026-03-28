@@ -14,7 +14,7 @@ import {
 
 // ── Data ─────────────────────────────────────────────────────────────
 
-const HERO_SLIDES = [
+const HERO_SLIDES = [ 
   {
     title: 'We Serve You',
     accent: 'Better',
@@ -138,7 +138,8 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-[#0a0a14] text-white">
       <PublicHeader />
-
+    
+      
       <AnimatedHero />
 
       {/* ── STATS BAR ───────────────────────────────────────────── */}
